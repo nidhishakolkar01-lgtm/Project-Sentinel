@@ -5,7 +5,7 @@ from anpr_processor import ANPRProcessor
 from watchlist_matcher import WatchlistMatcher
 
 BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
-API_KEY = os.getenv("SENTINEL_API_KEY", "sentinel_sec_key_2026_gujarat_police")
+API_KEY = os.getenv("SENTINEL_API_KEY", "sentinel_sec_key_2026_auth")
 
 def run_ai_engine():
     print("[AI Engine] Sentinel Multi-Stream AI ANPR Engine Starting...")

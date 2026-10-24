@@ -11,9 +11,9 @@ router = APIRouter(prefix="/api/v1/cameras", tags=["Model 1: GIS Asset Registry"
 # Pydantic Schemas with Strict Input Validation
 class CameraOnboardSchema(BaseModel):
     camera_code: str = Field(..., min_length=3, max_length=50, example="CAM-AHM-099")
-    department_name: str = Field(..., min_length=2, max_length=100, example="Home Department / Gujarat Police")
+    department_name: str = Field(..., min_length=2, max_length=100, example="Law Enforcement & Public Safety")
     vendor_name: str = Field("Hikvision", max_length=50)
-    rtsp_url: str = Field(..., example="rtsp://sentinel_gateway.gujarat.gov.in:8554/live/CAM-AHM-099")
+    rtsp_url: str = Field(..., example="rtsp://sentinel_gateway.internal:8554/live/CAM-AHM-099")
     latitude: float = Field(..., ge=-90.0, le=90.0)
     longitude: float = Field(..., ge=-180.0, le=180.0)
     district: str = Field(..., min_length=2, max_length=50, example="Ahmedabad")

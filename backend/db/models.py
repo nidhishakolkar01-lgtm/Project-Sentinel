@@ -58,5 +58,5 @@ class Watchlist(Base):
     reason = Column(String(200), nullable=False)
     category = Column(String(50), default="Stolen Vehicle")
     severity = Column(String(20), default="CRITICAL") # CRITICAL, HIGH, MEDIUM
-    added_by_department = Column(String(100), default="eGujCop / Police")
+    added_by_department = Column(String(100), default="Law Enforcement / Traffic Control")
     created_at = Column(DateTime, default=datetime.datetime.utcnow)

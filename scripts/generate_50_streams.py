@@ -6,7 +6,7 @@ def seed_streams():
     try:
         r = httpx.get("http://localhost:8000/api/v1/cameras")
         cams = r.json()
-        print(f"[Sentinel Scripts] Successfully verified {len(cams)} active camera streams in Gujarat GIS Registry.")
+        print(f"[Sentinel Scripts] Successfully verified {len(cams)} active camera streams in Central GIS Registry.")
     except Exception as e:
         print(f"[Sentinel Scripts] Backend API notice: {e}")
 

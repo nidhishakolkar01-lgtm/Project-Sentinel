@@ -14,7 +14,7 @@ class TestSentinelPlatform(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         Base.metadata.create_all(bind=engine)
-        init_db() # Seed 50 Gujarat Cameras, Departments, and Step 4 Watchlist
+        init_db() # Seed 50 Cameras, Departments, and Watchlist
         cls.client = TestClient(app)
 
     def test_01_root_endpoint(self):

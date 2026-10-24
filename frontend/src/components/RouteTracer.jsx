@@ -34,10 +34,10 @@ export default function RouteTracer({ onRouteLoaded }) {
         <div>
           <h2 className="text-base font-bold text-slate-100 flex items-center gap-2">
             <Navigation className="text-cyan-400" size={18} />
-            Step 4 Challenge: Vehicle Route Trajectory Engine
+            Vehicle Route Trajectory Engine
           </h2>
           <p className="text-xs text-slate-400 mt-0.5">
-            Trace target vehicle movement chronologically across Gujarat CCTV GIS map
+            Trace target vehicle movement chronologically across regional CCTV GIS map
           </p>
         </div>
         <span className="px-2.5 py-1 bg-cyan-950 text-cyan-300 border border-cyan-800 text-[11px] font-bold rounded-lg">

@@ -2,14 +2,14 @@ import os
 from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
-    PROJECT_NAME: str = "Project Sentinel - Gujarat CCTV Platform"
+    PROJECT_NAME: str = "Project Sentinel - Distributed Video Management & Analytics Platform"
     VERSION: str = "1.0.0"
     
     # Environment
     ENV: str = os.getenv("ENV", "development")
     
     # Security & Authentication
-    API_KEY: str = os.getenv("SENTINEL_API_KEY", "sentinel_sec_key_2026_gujarat_police")
+    API_KEY: str = os.getenv("SENTINEL_API_KEY", "sentinel_sec_key_2026_auth")
     ALLOW_ORIGINS: str = os.getenv("ALLOW_ORIGINS", "http://localhost:3000,http://localhost:8000,http://localhost:80,http://127.0.0.1:3000,http://127.0.0.1:8000")
     
     # Database

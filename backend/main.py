@@ -10,7 +10,7 @@ from services.health_checker import start_camera_health_monitor
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # 1. Initialize DB and Seed 50 Gujarat Cameras & Step 4 Watchlist Data
+    # 1. Initialize DB and Seed 50 Cameras & Step 4 Watchlist Data
     print("[Sentinel Backend] Initializing Database & Seed Data...")
     init_db()
     
@@ -24,7 +24,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title=settings.PROJECT_NAME,
     version=settings.VERSION,
-    description="Project Sentinel — Statewide Hybrid Video Management & Analytics Platform for Gujarat Police Innovation Challenge 2026",
+    description="Project Sentinel — Enterprise-Grade Distributed Video Management & Real-Time GIS Analytics Platform",
     lifespan=lifespan
 )
 

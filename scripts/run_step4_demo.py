@@ -12,7 +12,7 @@ from db.seed_data import init_db
 
 def trigger_step4_live_demo():
     print("=" * 60)
-    print("GUJARAT CCTV HACKATHON 2026 - STEP 4 LIVE EVALUATION SIMULATOR")
+    print("PROJECT SENTINEL - VEHICLE ROUTE TRAJECTORY & ANPR SIMULATOR")
     print("=" * 60)
 
     Base.metadata.create_all(bind=engine)
@@ -25,7 +25,7 @@ def trigger_step4_live_demo():
     try:
         r = client.post("/api/v1/analytics/watchlist", json={
             "plate_number": target_plate,
-            "reason": "Step 4 Challenge Stolen Vehicle Alert",
+            "reason": "Evaluation Stolen Vehicle Alert",
             "category": "Stolen Vehicle",
             "severity": "CRITICAL"
         })
@@ -33,7 +33,7 @@ def trigger_step4_live_demo():
     except Exception as e:
         print(f"   Backend note: {e}")
 
-    print("\n2. Simulating Real-Time ANPR Detection Hits across Gujarat Highway CCTVs...")
+    print("\n2. Simulating Real-Time ANPR Detection Hits across Highway CCTVs...")
     checkpoints = [
         ("CAM-AHM-004", "Geeta Mandir Central Bus Stand, Ahmedabad"),
         ("CAM-AHM-005", "Narol Circle Highway Junction, Ahmedabad"),
@@ -50,12 +50,12 @@ def trigger_step4_live_demo():
         res = r.json()
         print(f"   Total Checkpoints Tracked: {res.get('total_checkpoints')}")
         print(f"   Total Distance Traversed: {res.get('total_distance_km')} km")
-        print("   [SUCCESS] Step 4 Trajectory Route Successfully Calculated & Snapped to Map!")
+        print("   [SUCCESS] Trajectory Route Successfully Calculated & Snapped to Map!")
     except Exception as e:
         print(f"   Trajectory note: {e}")
 
     print("\n" + "=" * 60)
-    print("STEP 4 LIVE DEMO SIMULATION COMPLETE! OPEN DASHBOARD TO VIEW.")
+    print("DEMO SIMULATION COMPLETE! OPEN DASHBOARD TO VIEW.")
     print("=" * 60)
 
 if __name__ == "__main__":

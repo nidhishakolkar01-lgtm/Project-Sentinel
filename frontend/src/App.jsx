@@ -96,7 +96,7 @@ export default function App() {
               </span>
             </h1>
             <p className="text-[11px] text-slate-400 font-medium">
-              Gujarat Police CCTV Integration Platform — 26 Government Departments (~80,000 Cameras)
+              Distributed Multi-Agency CCTV Video Management & Real-Time GIS Analytics Platform
             </p>
           </div>
         </div>

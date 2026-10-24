@@ -10,7 +10,7 @@ export default function CameraRegistry({ cameras, onRefresh }) {
   // Form State
   const [formData, setFormData] = useState({
     camera_code: '',
-    department_name: 'Home Department / Gujarat Police',
+    department_name: 'Law Enforcement & Public Safety',
     vendor_name: 'Hikvision',
     rtsp_url: '',
     latitude: 23.02,
@@ -47,7 +47,7 @@ export default function CameraRegistry({ cameras, onRefresh }) {
             Model 1: Centralised CCTV Asset Registry & GIS Inventory
           </h2>
           <p className="text-xs text-slate-400 mt-0.5">
-            Single Source of Truth for ~80,000 cameras across 26 Gujarat Government Departments
+            Single Source of Truth for ~80,000 cameras across 26 Integrated Government Departments
           </p>
         </div>
 
@@ -159,6 +159,31 @@ export default function CameraRegistry({ cameras, onRefresh }) {
                     <option value="Axis">Axis</option>
                     <option value="CP Plus">CP Plus</option>
                   </select>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-slate-400 mb-1 font-semibold">Latitude</label>
+                  <input
+                    type="number"
+                    step="any"
+                    required
+                    value={formData.latitude}
+                    onChange={(e) => setFormData({...formData, latitude: parseFloat(e.target.value) || 0})}
+                    className="w-full bg-slate-950 border border-slate-700 p-2 rounded-lg text-slate-100 font-mono"
+                  />
+                </div>
+                <div>
+                  <label className="block text-slate-400 mb-1 font-semibold">Longitude</label>
+                  <input
+                    type="number"
+                    step="any"
+                    required
+                    value={formData.longitude}
+                    onChange={(e) => setFormData({...formData, longitude: parseFloat(e.target.value) || 0})}
+                    className="w-full bg-slate-950 border border-slate-700 p-2 rounded-lg text-slate-100 font-mono"
+                  />
                 </div>
               </div>
 

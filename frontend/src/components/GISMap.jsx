@@ -41,14 +41,14 @@ function ChangeMapView({ center, zoom }) {
 }
 
 export default function GISMap({ cameras, alertCameraId, routePoints, onSelectCamera }) {
-  const gujaratCenter = [22.75, 72.00]; // Gujarat Center Lat/Lng
+  const mapCenter = [22.75, 72.00]; // Regional Center Lat/Lng
   
   // Calculate Polyline Coordinates for Route Trajectory
   const polylineCoords = routePoints ? routePoints.map(p => [p.latitude, p.longitude]) : [];
 
   return (
     <div className="relative w-full h-full rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
-      <MapContainer center={gujaratCenter} zoom={8} scrollWheelZoom={true} className="w-full h-full">
+      <MapContainer center={mapCenter} zoom={8} scrollWheelZoom={true} className="w-full h-full">
         <ChangeMapView center={polylineCoords.length > 0 ? polylineCoords[polylineCoords.length - 1] : null} zoom={polylineCoords.length > 0 ? 10 : 8} />
         
         {/* Dark Map Tiles */}

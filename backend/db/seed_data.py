@@ -8,11 +8,11 @@ def init_db():
 
     # 1. Seed Departments (26 Departments Mandate)
     dept_names = [
-        "Home Department / Gujarat Police", "RTO / Transport Department", "Food & Civil Supplies",
+        "Law Enforcement & Public Safety", "RTO / Transport Department", "Food & Civil Supplies",
         "Municipal Corporation (Ahmedabad)", "Municipal Corporation (Surat)", "Municipal Corporation (Vadodara)",
         "State Disaster Management Authority", "Forest & Environment Department", "Health & Family Welfare",
         "Education Department", "Urban Development", "Roads & Buildings Department", "Port & Transport",
-        "Tourism Gujarat", "Panchayats & Rural Housing", "Revenue Department", "Agriculture & Farmers Welfare",
+        "Tourism & Heritage Department", "Panchayats & Rural Housing", "Revenue Department", "Agriculture & Farmers Welfare",
         "Energy & Petrochemicals", "Industries & Mines", "Labor & Employment", "Social Justice",
         "Tribal Development", "Women & Child Development", "Water Resources", "Information & Broadcasting",
         "State Crime Record Bureau (SCRB)"
@@ -29,11 +29,11 @@ def init_db():
     rto_dept_id = depts[1].id
     food_dept_id = depts[2].id
 
-    # 2. Seed 50 Cameras across Gujarat
+    # 2. Seed 50 Cameras across region
     existing_cams = db.query(Camera).all()
     if not existing_cams:
         sample_cameras = []
-        # Representative coordinates across Gujarat districts
+        # Representative coordinates across regional districts
         base_coords = [
             # Ahmedabad Area (CCTVs 1-15)
             ("CAM-AHM-001", "SG Highway - ISCON Cross Roads", "Ahmedabad", 23.0276, 72.5081, home_dept_id, "Hikvision"),
@@ -57,7 +57,7 @@ def init_db():
             ("CAM-GND-017", "GH-5 Circle - Mahatma Mandir", "Gandhinagar", 23.2200, 72.6480, home_dept_id, "Hikvision"),
             ("CAM-GND-018", "Chiloda Highway Junction", "Gandhinagar", 23.2450, 72.6910, rto_dept_id, "Axis"),
             ("CAM-GND-019", "Sector 21 Shopping Center", "Gandhinagar", 23.2180, 72.6390, home_dept_id, "Dahua"),
-            ("CAM-GND-020", "Gujarat Police Headquarters Sector 18", "Gandhinagar", 23.2110, 72.6450, home_dept_id, "CP Plus"),
+            ("CAM-GND-020", "Police Headquarters Sector 18", "Gandhinagar", 23.2110, 72.6450, home_dept_id, "CP Plus"),
             ("CAM-GND-021", "PDPU Road Raysan Circle", "Gandhinagar", 23.1580, 72.6520, home_dept_id, "Hikvision"),
             ("CAM-GND-022", "Kudasan Cross Roads", "Gandhinagar", 23.1810, 72.6280, home_dept_id, "Hikvision"),
             ("CAM-GND-023", "GIFT City Main Entry Checkpoint", "Gandhinagar", 23.1610, 72.6840, home_dept_id, "Axis"),
@@ -97,7 +97,7 @@ def init_db():
         ]
 
         for code, addr, dist, lat, lng, dept_id, vendor in base_coords:
-            rtsp = f"rtsp://sentinel_gateway.gujarat.gov.in:8554/live/{code}"
+            rtsp = f"rtsp://sentinel_gateway.internal:8554/live/{code}"
             webrtc = f"http://localhost:8889/live/{code}"
             c = Camera(
                 camera_code=code,
