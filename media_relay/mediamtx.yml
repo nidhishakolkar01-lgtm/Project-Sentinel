@@ -1,0 +1,23 @@
+# MediaMTX Configuration for Project Sentinel Video Relay
+logLevel: info
+logDestinations: [stdout]
+
+# RTSP Server Configuration
+rtsp: yes
+rtspAddress: :8554
+protocols: [tcp, udp]
+
+# WebRTC Server Configuration
+webrtc: yes
+webrtcAddress: :8889
+webrtcEncryption: no
+webrtcAllowOrigin: "http://localhost:3000,http://localhost:8000,http://localhost"
+
+# HLS Server Configuration
+hls: yes
+hlsAddress: :8888
+hlsAlwaysRemux: yes
+
+# Path Configuration (Dynamic RTSP & WebRTC Feeds)
+paths:
+  all_others:
